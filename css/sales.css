@@ -1,3 +1,4 @@
+
 table{
    
 width: 100%;
@@ -10,12 +11,19 @@ table tr td{
     border: 1px solid gray;
     text-align: center;
     font-size: large;
+    background-color: rgb(243, 40, 40);
+    color: rgb(255, 255, 255);
 }
 
 table tr th{
     border: 1px solid gray;
     text-align: center;
     font-size: large;
+    background-color: rgba(0, 0, 0, 0.888);
+    color: rgb(255, 255, 255);
 
+}
 
+tr , td , th  {
+    padding: 8px;
 }

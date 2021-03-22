@@ -1,15 +1,56 @@
 * {
     box-sizing: border-box;
     transition: all ease-in-out 0.2s ;
+    font-family: Georgia, 'Times New Roman', Times, serif
+
 }
 
 header h1{
-    color: rgb(231, 37, 37);
+    color: rgb(39, 2, 2);
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+
 }
-header a{
-    display: block;
-    color: rgb(231, 37, 37);
+header #imgHead {
+    background-image: url('https://raw.githubusercontent.com/LTUC/amman-201d19/master/class-06/lab/assets/salmon.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    padding: 250px 0;
+
+}
+
+header #navBar{
+    background-color: rgba(226, 220, 219, 0.24);
+    overflow: auto;
+    }
+header #navBar a{
+    
+    color: rgb(141, 6, 6);
     text-decoration: none;
     font-size: larger;
-    margin-top:10px  ;
+    font-family: Arial, Helvetica, sans-serif;
 }
+
+
+header #navBar li{
+    display: inline-block;
+    color: rgb(46, 15, 15);
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+    list-style: none;
+    margin-left: 17px;
+    float: right;
+
+}
+
+
+header #navBar img {
+    float: left;
+    width: 150px;
+    height: 60px;
+    
+    
+}
+
