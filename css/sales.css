@@ -1,0 +1,21 @@
+table{
+   
+width: 100%;
+border-collapse: collapse;
+}
+table tr{
+    border: 1px solid gray;
+}
+table tr td{
+    border: 1px solid gray;
+    text-align: center;
+    font-size: large;
+}
+
+table tr th{
+    border: 1px solid gray;
+    text-align: center;
+    font-size: large;
+
+
+}
