@@ -51,7 +51,6 @@ let headerTable = function(){
 
 
 
-
 const Sales = function (location, the_Min_Hourly_Customers, the_Max_Hourly_Customers, avg, getCustomerHourArray, getCookiesHourArray, total) {
 
   this.location = location;
@@ -209,3 +208,7 @@ let footerTable  = function(){
 };
 
 footerTable();
+
+// ..................................................................
+
+
