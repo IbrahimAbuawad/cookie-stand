@@ -1,5 +1,5 @@
 'use strict';
-
+let salesObjects = [];
 function random(max, min) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 
@@ -28,7 +28,11 @@ const time = [
 ];
 let tableEl = document.createElement('table');
 
-let headerTable = function(){
+function deleteRow(){
+  tableEl.deleteRow(tableEl.rows.length-1);
+}
+
+let headerTable = function () {
 
 
   div.appendChild(tableEl);
@@ -60,6 +64,7 @@ const Sales = function (location, the_Min_Hourly_Customers, the_Max_Hourly_Custo
   this.getCustomerHourArray = getCustomerHourArray;
   this.getCookiesHourArray = getCookiesHourArray;
   this.total = total;
+  salesObjects.push(this);
 
 };
 
@@ -176,39 +181,81 @@ lima.customer_per_hour();
 lima.avg_per_hour();
 lima.render();
 
-let footerTable  = function(){
+
+let footerTable = function () {
 
   let tr2El = document.createElement('tr');
   tableEl.appendChild(tr2El);
   let tdEl = document.createElement('th');
   tdEl.textContent = 'Total';
   tr2El.appendChild(tdEl);
+  let sumPerHour = 0;
 
   for (let i = 0; i < time.length; i++) {
     tdEl = document.createElement('th');
 
-    if((time.length-1)===i){
-      tdEl.textContent =
-    seattle.total +
-    tokyo.total +
-    dubai.total +
-    paris.total +
-    lima.total ;
-      tr2El.appendChild(tdEl);
+
+
+    for (let j = 0; j < salesObjects.length; j++) {
+      if ((time.length - 1) === i) {
+
+        sumPerHour = sumPerHour + salesObjects[j].total;
+
+
+      }
+      else {
+        sumPerHour = sumPerHour + salesObjects[j].getCookiesHourArray[i];
+      }
+
+
+
     }
-    else{
-      tdEl.textContent = seattle.getCookiesHourArray[i] +
-    tokyo.getCookiesHourArray[i] +
-    dubai.getCookiesHourArray[i] +
-    paris.getCookiesHourArray[i] +
-    lima.getCookiesHourArray[i] ;
-      tr2El.appendChild(tdEl);
-    }
+    tdEl.textContent = sumPerHour;
+    tr2El.appendChild(tdEl);
+
+    sumPerHour = 0;
+
   }
+
+
 };
 
 footerTable();
 
+
+let cookiesForm = document.getElementById('cookiesForm');
+
+cookiesForm.addEventListener('submit', addLocation);
+
+function addLocation(event) {
+  event.preventDefault();
+
+  let locationName = event.target.location.value;
+  let maxNumber = event.target.max.value;
+  let minNumber = event.target.min.value;
+  let avgNumber = event.target.avg.value;
+
+  let newLocation = new Sales(locationName, minNumber, maxNumber, avgNumber, [], [], 0);
+
+  deleteRow();
+
+  newLocation.customer_per_hour();
+  newLocation.avg_per_hour();
+  newLocation.render();
+
+  footerTable();
+}
+
+
+
+
+
+
+
+
+
 // ..................................................................
+
+
 
 

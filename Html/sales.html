@@ -14,18 +14,44 @@
 
 <body>
     <header>
-        <div id='navBar' >
-            <a href="index.html"><img src="https://raw.githubusercontent.com/LTUC/amman-201d19/master/class-06/lab/assets/salmon.png" alt="fish Icon"></a>
-        <ul>
-            <li><a href="../index.html">Home Page</a></li>
-            <li><a href="#">About us</a></li>
-        </ul>
-    </div>
+        <div id='navBar'>
+            <a href="index.html"><img
+                    src="https://raw.githubusercontent.com/LTUC/amman-201d19/master/class-06/lab/assets/salmon.png"
+                    alt="fish Icon"></a>
+            <ul>
+                <li><a href="../index.html">Home Page</a></li>
+                <li><a href="#">About us</a></li>
+            </ul>
+        </div>
     </header>
     <main>
         <div id="Container"></div>
+        <form id='cookiesForm'>
+            <fieldset>
+                <legend>Add new Location</legend>
+                <label for="location">Location : </label>
+                <input type="text" name="location" id="location" placeholder="Amman">
+                <br>
+                <br>
+                <label for="min">MinPerCustomer : </label>
+                <input type="number" name="min" id="min" placeholder="8">
 
-
+                <br>
+                <br>
+                <label for="max">MaxPerCustomer : </label>
+                <input type="number" name="max" id="max" placeholder="23">
+                <br>
+                <br>
+                <label for="avg">Average : </label>
+                <input type="number" name="avg" id="avg" step="any" placeholder="3.5">
+                <br>
+                <br>
+                <input type="submit" value="Create new Location">
+            </fieldset>
+        </form>
+        </fieldset>
+        </form>
+        
     </main>
     <script src="../JavaScript/app.js"></script>
 </body>
