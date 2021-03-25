@@ -91,28 +91,7 @@ Sales.prototype.avg_per_hour = function () {
 };
 
 Sales.prototype.render = function () {
-  // let pEl = document.createElement('p');
-  // div.appendChild(pEl);
 
-  // let ulEl = document.createElement('ul');
-  // div.appendChild(ulEl);
-
-
-  // pEl.textContent = this.location;
-
-  // for (let i = 0; i < time.length; i++) {
-  //   let liEl = document.createElement('li');
-  //   ulEl.appendChild(liEl);
-  //   if ((time.length - 1) === i) {
-  //     liEl.textContent = `${time[i]} : ${this.total} cookies `;
-
-  //   }
-  //   else {
-
-  //     liEl.textContent = `${time[i]} : ${this.getCookiesHourArray[i]} cookies `;
-  //     this.total = this.total + this.getCookiesHourArray[i];
-  //   }
-  // }
 
   let tr2El = document.createElement('tr');
   tableEl.appendChild(tr2El);
@@ -231,9 +210,9 @@ function addLocation(event) {
   event.preventDefault();
 
   let locationName = event.target.location.value;
-  let maxNumber = event.target.max.value;
-  let minNumber = event.target.min.value;
-  let avgNumber = event.target.avg.value;
+  let maxNumber = Number(event.target.max.value);
+  let minNumber = Number(event.target.min.value);
+  let avgNumber = Number(event.target.avg.value);
 
   let newLocation = new Sales(locationName, minNumber, maxNumber, avgNumber, [], [], 0);
 
@@ -250,11 +229,6 @@ function addLocation(event) {
 
 
 
-
-
-
-
-// ..................................................................
 
 
 
